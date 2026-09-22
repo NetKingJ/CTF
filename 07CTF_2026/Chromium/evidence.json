@@ -1,0 +1,58 @@
+{
+  "record_type": "historical_verification_summary",
+  "provenance": "Extracted from retained local browser validation, remote acquisition, and reconciled platform acceptance records; not a new remote test or signed platform receipt.",
+  "event": "07CTF 2026",
+  "challenge": "Chromium",
+  "challenge_id": "20b1f25b-dcd0-4ab5-b4be-0310f9473278",
+  "team": "JackSpeor",
+  "technique": "V8 TakeHeapSnapshot with a caller-selected filename satisfies a regular-file existence gate",
+  "scope": "Heap-snapshot file creation; arbitrary-code execution and arbitrary file-content control were not demonstrated",
+  "browser": {
+    "version": "152.0.7967.2",
+    "platform": "linux-amd64",
+    "v8_revision": "d7d77da2d65c86743e1d7fffdde793c33fd2fc3d",
+    "executable_sha256": "0525ddf01f65c5ac589562cc08c4eeb1875d3c4f7d592ac5a252f867b9e23252"
+  },
+  "payload": {
+    "file": "snapshot.html",
+    "bytes": 134,
+    "sha256": "f1e023bc847f1f45ac2aa4dd1e4bf70a24135617ee2c4acd98ac4fcd1b7822cc"
+  },
+  "local_validation": {
+    "exact_chrome_executable_and_launch_flags": true,
+    "marker_exists": true,
+    "marker_bytes": 2238175,
+    "snapshot_json_valid": true,
+    "completion_seconds_after_html_request": 1.633,
+    "local_glibc": "2.41",
+    "handout_glibc": "2.42-13"
+  },
+  "remote_acquisition": {
+    "baseline_flag_http_status": 404,
+    "submit_http_status": 200,
+    "submit_response": {
+      "ok": true,
+      "status": "revealed"
+    },
+    "submit_completed_at": "2026-09-19T12:46:46.478331+00:00",
+    "flag_http_status": 200,
+    "flag_retrieved_at": "2026-09-19T12:46:46.937260+00:00",
+    "raw_flag_bytes": 52,
+    "raw_flag_sha256": "c3fe031df70dd3ee2d479a3b25a60021d5d004f31ab54bf29b5817543e237753",
+    "raw_flag_has_terminal_lf": true
+  },
+  "platform_acceptance": {
+    "correct": true,
+    "catalog_solved": true,
+    "accepted_at": "2026-09-19T12:49:12.068487+00:00",
+    "reconciled_at": "2026-09-19T12:58:33.574475+00:00",
+    "confirmation": [
+      "Positive official submission result",
+      "Fresh own-team profile solve",
+      "Fresh challenge catalog solved=true"
+    ],
+    "submitted_flag_bytes": 51,
+    "submitted_flag_sha256": "b82b901f339cc33fb828046bc55b9731c24694da965db0365de9a9c7c20558c6",
+    "normalization": "Observed official UI flag.trim() behavior; original 52-byte response preserved unchanged"
+  }
+}
